@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -25,8 +26,11 @@ namespace CursoTest
 
             _mockContext.Setup(m => m.Categorias).Returns(_mockSet.Object);
 
-            _mockContext.Setup(m => m.Categorias.FindAsync(1))
-                .ReturnsAsync(_categoria);
+            _mockContext.Setup(m => m.Categorias.FindAsync(1)).ReturnsAsync(_categoria);
+
+            _mockContext.Setup(m => m.SetModified(_categoria));
+
+            _mockContext.Setup(m => m.SaveChangesAsync(It.IsAny<CancellationToken>())).ReturnsAsync(1);
         }
 
         [Fact]
@@ -36,8 +40,38 @@ namespace CursoTest
 
             await service.GetCategoria(1);
 
-            _mockSet.Verify(m => m.FindAsync(1), 
-                Times.Once());
+            _mockSet.Verify(m => m.FindAsync(1), Times.Once());
+
+        }
+
+        [Fact]
+        public async Task Put_Categoria()
+        {
+            var service = new CategoriasController(_mockContext.Object);
+            await service.PutCategoria(1, _categoria);
+
+            _mockContext.Verify(m => m.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Once());
+        }
+
+        [Fact]
+        public async Task Post_Categoria()
+        {
+            var service = new CategoriasController(_mockContext.Object);
+            await service.PostCategoria(_categoria);
+
+            _mockSet.Verify(x => x.Add(_categoria), Times.Once);
+            _mockContext.Verify(m => m.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Once());
+        }
+
+        [Fact]
+        public async Task Delete_Categoria()
+        {
+            var service = new CategoriasController(_mockContext.Object);
+            await service.DeleteCategoria(1);
+
+            _mockSet.Verify(m => m.FindAsync(1), Times.Once());
+            _mockSet.Verify(x => x.Remove(_categoria), Times.Once());
+            _mockContext.Verify(m => m.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Once());
         }
     }
 }
