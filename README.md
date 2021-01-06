@@ -1,4 +1,5 @@
 
+
 <p align="center">
     <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/nvmelo/aspnet-web-app">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/nvmelo/aspnet-web-app?label=updated">
@@ -24,6 +25,29 @@
     Web app using ASP.NET
   </p>
 </p>
+
+<!-- ERROR MESSAGES FOUND -->
+## Error messages found
+
+    Mensagem: 
+    System.NotSupportedException : Unsupported expression: m => m.Categorias
+    Non-overridable members (here: Context.get_Categorias) may not be used in setup / verification expressions.
+
+<!-- USED PACKAGES -->
+## Used packages
+
+ - coverlet.collector (v1.3.0)
+ - Microsoft.AspNetCore.Authentication.JwtBearer (v5.0.1)
+ - Microsoft.AspNetCore.Authentication.OpenIdConnect (v5.0.1)
+ - Microsoft.EntityFrameworkCore.Sqlite (v5.0.1)
+ - Microsoft.EntityFrameworkCore.SqlServer (v5.0.1)
+ - Microsoft.EntityFrameworkCore.Tools (v5.0.1)
+ - Microsoft.NET.Test.Sdk (v16.7.1)
+ - Microsoft.VisualStudio.Web.CodeGeneration.Design (v5.0.1)
+ - Moq (v4.15.2)
+ - Swashbuckle.AspNetCore (v5.6.3)
+ - xunit (v2.4.1)
+ - xunit.runner.visualstudio (v2.4.3)
 
 <!-- LICENSE -->
 ## License
