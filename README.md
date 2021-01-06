@@ -28,6 +28,7 @@
 
 <!-- ERROR MESSAGES FOUND -->
 ## Error messages found
+Erro encontrado ao executar o teste xunit no arquivo `CursoAPI/CategoriasControllerTest.cs` com dependências do arquivo `CursoTest/CategoriasController.cs`:
 
     CursoTest.CategoriasControllerTest.Get_Categoria
 	    Fonte: CategoriasControllerTest.cs linha 33
