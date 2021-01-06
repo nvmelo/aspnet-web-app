@@ -26,27 +26,6 @@
   </p>
 </p>
 
-<!-- ERROR MESSAGES FOUND -->
-## Error messages found
-Erro encontrado ao executar o teste xunit no arquivo `CursoAPI/CategoriasControllerTest.cs` com dependências do arquivo `CursoTest/CategoriasController.cs`:
-
-    CursoTest.CategoriasControllerTest.Get_Categoria
-	    Fonte: CategoriasControllerTest.cs linha 33
-	    Duração: 1 ms
-	    
-    Mensagem: 
-	    System.NotSupportedException : Unsupported expression: m => m.Categorias
-	    Non-overridable members (here: Context.get_Categorias) may not be used in setup / verification expressions.
-    
-    Rastreamento de Pilha: 
-	    Guard.IsOverridable(MethodInfo method, Expression expression) linha 99
-	    InvocationShape.ctor(LambdaExpression expression, MethodInfo method, IReadOnlyList`1 arguments, Boolean exactGenericTypeArguments, Boolean skipMatcherInitialization, Boolean allowNonOverridable) linha 82
-	    ExpressionExtensions.<Split>g__Split|5_0(Expression e, Expression& r, InvocationShape& p, Boolean assignment, Boolean allowNonOverridableLastProperty) linha 304
-	    ExpressionExtensions.Split(LambdaExpression expression, Boolean allowNonOverridableLastProperty) linha 148
-	    Mock.SetupRecursive[TSetup](Mock mock, LambdaExpression expression, Func`4 setupLast, Boolean allowNonOverridableLastProperty) linha 618
-	    Mock.Setup(Mock mock, LambdaExpression expression, Condition condition) linha 522
-	    Mock`1.Setup[TResult](Expression`1 expression) linha 468
-	    CategoriasControllerTest.ctor() linha 26
 
 <!-- USED PACKAGES -->
 ## Used packages
@@ -77,3 +56,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 Nereu Melo -  nereuvictor1@gmail.com
 
 [Project link](https://github.com/nvmelo/aspnet-web-app)
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+* [Anderson Moreira](https://www.linkedin.com/in/anderson-moreira-0965779b/) - Project author and problem solving adviser
